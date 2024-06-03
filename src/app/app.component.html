@@ -1,0 +1,30 @@
+<router-outlet></router-outlet>
+<div>
+  <div>
+    <input [(ngModel)]="fname" (input)="filterByName()">
+      <!-- <button (click)="addItem(name)">Добавить</button> -->
+  <button (click)="sortByPriceA()">Sort by price (Asc)</button>
+  <button (click)="sortByPriceD()">Sort by price (Desc)</button>
+  </div>
+  <ul>
+  @for(product of fproducts; track $index){
+      <li>
+        <h3>{{ product.name }}</h3>
+      <p>Price: {{ product.price }}</p>
+      <p>Description: {{ product.description }}</p>
+      </li>
+  }
+  </ul>
+
+</div>
+
+<div>
+  <p>Numbers: {{ numbers }}</p>
+  <p>Asc: {{ sortNumbersAsc }}</p>
+  <p>Desc: {{ sortNumbersDesc }}</p>
+  <p>Max: {{ maxNumber }}</p>
+</div>
+
+
+
+
